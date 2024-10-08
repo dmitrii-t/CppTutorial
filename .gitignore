@@ -6,6 +6,7 @@ x86/
 
 # Ignore build artifacts
 *.obj
+*.o
 *.exe
 *.pdb
 *.ilk
@@ -50,7 +51,6 @@ CMakeCache.txt
 CMakeScripts/
 CTestTestfile.cmake
 cmake_install.cmake
-Makefile
 
 # Ignore other temporary or cache files
 *.pdb

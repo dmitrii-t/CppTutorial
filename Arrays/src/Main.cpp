@@ -8,14 +8,14 @@
 #define ARRAY_COMPLETION_COUT std::cout << "}" << std::endl;
 #endif
 
+constexpr int LENGTH{6};
+
 int main()
 {
-	constexpr int length{6};
-
 	// zero-initialized array
 	int zeroes[6]{};
 
-	std::cout << "zeroes[" << length << "] { ";
+	std::cout << "zeroes[" << LENGTH << "] { ";
 
 	// get number of elements via sizeof(zeroes)/sizeof(zeroes[0]) or _countof(zeroes);
 	for(int i = 0, len = sizeof(zeroes) / sizeof(zeroes[0]); i < len; i++)
@@ -25,12 +25,12 @@ int main()
 	ARRAY_COMPLETION_COUT
 
 
-	// array initialization within declaration
-	int hundreds[length]{100, 200, 300, 400, 500, 600};
+	// Array can have initialization within declaration
+	int hundreds[LENGTH]{100, 200, 300, 400, 500, 600};
 
-	std::cout << "hundreds[" << length << "] { ";
+	std::cout << "hundreds[" << LENGTH << "] { ";
 
-	// range-based for loop
+	// Array supports range-based for loop
 	for(int h : hundreds)
 	{
 		std::cout << h << " ";
