@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlgorithmAStar", "Algorithm
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConstAndConstexpr", "ConstAndConstexpr\ConstAndConstexpr.vcxproj", "{03B8A462-8D1E-47A6-A2D3-4BDDA3BDDC4C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnorderedMap", "UnorderedMap\UnorderedMap.vcxproj", "{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -191,6 +193,14 @@ Global
 		{03B8A462-8D1E-47A6-A2D3-4BDDA3BDDC4C}.Release|Win32.Build.0 = Release|Win32
 		{03B8A462-8D1E-47A6-A2D3-4BDDA3BDDC4C}.Release|x64.ActiveCfg = Release|x64
 		{03B8A462-8D1E-47A6-A2D3-4BDDA3BDDC4C}.Release|x64.Build.0 = Release|x64
+		{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}.Debug|Win32.Build.0 = Debug|Win32
+		{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}.Debug|x64.ActiveCfg = Debug|x64
+		{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}.Debug|x64.Build.0 = Debug|x64
+		{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}.Release|Win32.ActiveCfg = Release|Win32
+		{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}.Release|Win32.Build.0 = Release|Win32
+		{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}.Release|x64.ActiveCfg = Release|x64
+		{5EBF8ECD-D4B2-4783-935B-893DD7329C6E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

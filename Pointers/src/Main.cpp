@@ -1,42 +1,59 @@
-/* Pointers.cpp 
+/* Pointers.cpp
  * Exercising pointers
  */
 #include <iostream>
+#include <vector>
+
+using namespace std;
+
+void Increment(int* i)
+{
+    // Dereference the pointer and increment the int being pointed to.
+    (*i)++;
+}
+
+int* OutOfScopePointer()
+{
+    int i = 100;
+    int *pi = &i;
+    cout <<  "OutOfScopePointer: &i=" << pi << '\n';
+    return pi;
+}
 
 int main()
 {
-    // definitions on pointers and ordinary variables can be mixed the following is the same as
-    // long *pnumber; // Declaration of variable of type pointer to long
-    // long number {99}; // Declaration and initialization of long variable
-    long *pnumber, number{99};
+    cout << "type <variables name>{value} - declaring and initializing a variable" << '\n';
+    long number{99};
+    cout << "long number{99}=" << number << '\n' << '\n';
 
-    // using reference operator to assign the address of number to pnumber
-    pnumber = &number;
-
-    std::cout << "number: " << number << '\n';
-    std::cout << "pnumber: " << pnumber << '\n';
-
-    // using indirection operator to dereference pnumber to access the value
-    std::cout << "*pnumber: " << *pnumber << '\n';
-    std::cout << '\n';
+    cout << "type& <variables name>{value} - declaring a reference" << '\n';
+    long& rnumber{number};
+    cout << "long& rnumber{number}=" << rnumber << '\n' << '\n';
 
     // initializing pointer
-    int integer{};
-    int* pinteger{&integer};
+    cout << "type* <variable's name>{&value} - declaring a pointer" << '\n';
+    long* pnumber{&number};
+    cout << "long* pnumber{&number}=" << pnumber << '\n' << '\n';
 
-    std::cout << "integer: " << integer << '\n';
-    std::cout << "*pinteger: " << *pinteger << '\n';
+    cout << "pnumber = &number - using overloaded reference operator & - to get the address of number to pnumber" << '\n';
+    pnumber = &number;
+    cout << "pnumber=" << pnumber << '\n' << '\n';
 
+    cout << "*pnumber - using indirection operator to dereference pnumber to access the value" << '\n';
+    cout << "*pnumber=" << *pnumber << '\n';
+    cout << '\n';
 
-    // null pointers
-    int* pnull{nullptr}; // 0 and NULL macro also work
+    cout << "int* pnull{nullptr} - initializing a pointer with nullptr value; 0 and NULL macro also work" << '\n';
+    int* pnull{nullptr};
+    cout << "*pnull=" << pnull << " do NOT try to dereference *pnull" << '\n' << '\n';
 
-    // nullptr can be implicitly converted to type bool
+    cout << "nullptr can be implicitly converted to type bool" << '\n';
+    cout << "if (!pnull) { cout << \"pnull is null\" }" << '\n';
     if (!pnull)
     {
-        std::cout << "pnull is null" << '\n';
+        cout << "pnull is null" << '\n';
     }
-    std::cout << '\n';
+    cout << '\n';
 
     // there can be definitions of constant pointers to constant objects
     const char* const pstr[] = {
@@ -48,25 +65,65 @@ int main()
         "Oliver Hardy"
     };
 
-
+    cout << "given array " << '\n';
+    cout << "int data[3] = {1, 2, 3}" << '\n';
     int data[3] = {1, 2, 3};
-    
-    // initialize pointer with the array address; not &data, but data
-    int* pdata{data}; 
-    std::cout << "data[0]: " << *pdata << '\n';
+    cout << '\n';
 
-    // initialize pointer with the address of the second element
-    pdata = &data[1]; 
-    std::cout << "data[1]: " << *pdata << '\n';
+    cout << "array variable is not an actual pointer but decays into a pointer to the first element" << '\n';
+    cout << "*data=" << *data << '\n';
+    cout << "*(data + 1)=" << *(data + 1) << '\n';
+    cout << "*(data + 2)=" << *(data + 2) << '\n';
+    cout << '\n';
 
-    // you can apply pointer arithmetic to access the elements, this wil increase the pointer on 1*sizeof(int)
+    cout << "initialize pointer with the array address; not &data, but data" << '\n';
+    cout << "int* pdata{data};" << '\n';
+    int* pdata{data};
+    cout << "data[0]=" << *pdata << '\n';
+    cout << '\n';
+
+    cout << "initialize pointer with the address of the second element" << '\n';
+    cout << "pdata = &data[1];" << '\n';
+    pdata = &data[1];
+    cout << "data[1]=" << *pdata << '\n';
+    cout << '\n';
+
+    cout << "you can apply pointer arithmetic to access the elements, this wil increase the pointer on 1*sizeof(int)" << '\n';
+    cout << "pdata += 1" << '\n';
     pdata += 1;
-    std::cout << "data[2]: " << *pdata << '\n';
+    cout << "data[2]=" << *pdata << '\n';
+    cout << '\n';
 
-    // but the following will increase the value of the pointer
+    cout << "but the following will increase the value the pointer points to" << '\n';
+    cout << "*pdata += 1;" << '\n';
     *pdata += 1;
-    std::cout << "data[2]: " << *pdata << '\n';
-    
-    std::cout << '\n';
+    cout << "data[2]=" << *pdata << '\n';
+    cout << '\n';
+
+    // Example with a vector
+    vector<int> v {1, 2, 3};
+    vector<int>* pv = &v;
+
+    cout << "data=[ ";
+    for (long i = 0; i < pv->size(); i++)
+    {
+        cout << pv->at(i) << ',';
+    }
+    cout << "]" << '\n';
+    cout << '\n';
+
+    // Example with pass-by-reference with a pointer
+    int i = 0;
+    cout << "i=" << i << '\n';
+    cout << "Increment(&i)" << '\n';
+    Increment(&i);
+    cout << "i=" << i << '\n';
+    cout << '\n';
+
+
+    int* j = OutOfScopePointer();
+    cout << "int* j = OutOfScopePointer(); j=" << j << " // *OutOfScopePointer() fails as pointer is out of scope" << '\n';
+    cout << '\n';
+
     return 0;
 }

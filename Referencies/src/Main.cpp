@@ -23,6 +23,7 @@ int main()
 {
     string s = "Hello";
     cout << "The string s is: " << s << "\n";
+
     DoubleString(s);
     cout << "The string s is now: " << s << "\n";
 }
