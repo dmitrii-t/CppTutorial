@@ -36,4 +36,4 @@ $(BINARY): $(OBJECTS) | $(BIN_DIR)
 # Clean rule
 .PHONY: clean
 clean:
-	rm -rf $(OBJ_DIR) $(SRC_DIR)
+	rm -rf $(OBJ_DIR) $(BIN_DIR)

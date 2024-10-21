@@ -30,7 +30,7 @@ $(TARGET): $(OBJECTS) | $(BIN_DIR)
 
 # Clean rule
 clean:
-	rm -rf $(OBJ_DIR) $(SRC_DIR)
+	rm -rf $(OBJ_DIR) $(BIN_DIR)
 
 # Phony targets
 .PHONY: all clean
