@@ -63,6 +63,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Overriding", "Overriding\Ov
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultipleInheritance", "MultipleInheritance\MultipleInheritance.vcxproj", "{C30FA767-F183-4D8C-8607-081FFD1A7EEA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance_Vehicle", "Inheritance_Vehicle\Inheritance_Vehicle.vcxproj", "{B39F3619-FFBF-45BE-A31D-3637B07877AF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance_Animal", "Inheritance_Animal\Inheritance_Animal.vcxproj", "{57A4F038-EA00-4EEC-B6B1-B701560E0CAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
