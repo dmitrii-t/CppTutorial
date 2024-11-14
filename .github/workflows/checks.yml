@@ -1,0 +1,72 @@
+﻿name: C++ CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  format-check:
+    name: Format Check
+    runs-on: ubuntu-latest
+    container:
+      image: silkeh/clang:14
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check code formatting
+        shell: bash
+        run: |
+          FORMATTING_ISSUES=0
+
+          while IFS= read -r file; do
+            if ! clang-format -style=file --dry-run --Werror "$file"; then
+              FORMATTING_ISSUES=1
+              # Run again without --Werror to show the diff
+              clang-format -style=file --dry-run "$file"
+            fi
+          done < <(find . -type f \( -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \))
+
+          if [ $FORMATTING_ISSUES -eq 1 ]; then
+            echo "::error::Formatting issues found. Please run 'make fmt' locally."
+            exit 1
+          fi
+
+  build:
+    name: Build Projects
+    needs: format-check
+    runs-on: ubuntu-latest
+    container:
+      # Using GCC container that matches the Makefile requirements
+      image: gcc:14
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find and build all projects
+        run: |
+          # Find all directories containing Makefiles
+          find . -name Makefile -exec dirname {} \; | while read project_dir; do
+            echo "Building project in $project_dir"
+            cd "$project_dir"
+
+            # Create required directories
+            mkdir -p obj bin
+
+            # Build the project
+            if ! make all; then
+              echo "::error::Build failed for project in $project_dir"
+              exit 1
+            fi
+
+            # Run basic verification that the binary was created
+            if [ ! -f "bin/a.exe" ]; then
+              echo "::error::Binary not created for project in $project_dir"
+              exit 1
+            fi
+
+            # Return to root directory for next iteration
+            cd - > /dev/null
+          done
