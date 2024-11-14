@@ -1,49 +1,42 @@
-#include <iostream>
 #include <cassert>
-#define _USE_MATH_DEFINES // Must come before cmath to get M_PI
 #include <cmath>
+#include <iostream>
 
-class Sphere
-{
+#define PI 3.1415927
+
+class Sphere {
 public:
-    Sphere(float radius);
+  Sphere(double radius);
 
-    static float V(float radius)
-    {
-        return (4.0/3.0) * M_PI * pow(radius, 3);
-    }
+  static double V(float radius) {
+    return (4.0 / 3.0) * PI * std::pow(radius, 3);
+  }
 
-    float Volume() const;
+  double Volume() const;
 
-    void Radius(float radius);
-    float Radius(){ return radius; }
+  void Radius(double radius);
+  double Radius() { return radius; }
 
 private:
-    float radius;
+  double radius;
 };
 
-Sphere::Sphere(float radius)
-{
-    Radius(radius);
+Sphere::Sphere(double radius) { Radius(radius); }
+
+void Sphere::Radius(double r) {
+  if (r < 0) {
+    throw std::out_of_range("Radius");
+  }
+  radius = r;
 }
 
-void Sphere::Radius(float r)
-{
-    if (r < 0) { throw std::out_of_range("Radius"); }
-    radius = r;
-}
+double Sphere::Volume() const { return (4.0 / 3.0) * PI * std::pow(radius, 3); }
 
-float Sphere::Volume() const
-{
-    return (4.0/3.0) * M_PI * pow(radius, 3);
-}
+int main() {
+  Sphere sphere(5);
+  assert(sphere.Radius() == 5);
+  assert(abs(sphere.Volume() - 523.6) < 1);
 
-int main()
-{
-    Sphere sphere(5);
-    assert(sphere.Radius() == 5);
-    assert(abs(sphere.Volume() - 523.6) < 1);
-
-    std::cout << "All tests passed!" << std::endl;
-    return 0;
+  std::cout << "All tests passed!" << std::endl;
+  return 0;
 }
