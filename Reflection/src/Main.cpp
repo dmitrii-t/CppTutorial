@@ -1,93 +1,71 @@
-/* Reflection.cpp 
-* Exercising reflection system impl
+/* Reflection.cpp
+ * Exercising reflection system impl
  */
 #include <iostream>
 #include <map>
 #include <sstream>
-#include <vector>
 #include <string>
+#include <vector>
 
-
-class Property
-{
+class Property {
 public:
-    // virtual ~Property();
-    virtual std::string GetName() const = 0;
-    virtual std::string GetLabel() const = 0;
-    virtual std::string GetStringValue() const = 0;
+  // virtual ~Property();
+  virtual std::string GetName() const = 0;
+  virtual std::string GetLabel() const = 0;
+  virtual std::string GetStringValue() const = 0;
 };
 
-template <typename T>
-class PropertyImpl : public Property
-{
+template <typename T> class PropertyImpl : public Property {
 public:
-    PropertyImpl(const std::string& name, const std::string& label, T* value)
-        : name(name), label(label), value(value)
-    {
-    }
+  PropertyImpl(const std::string &name, const std::string &label, T *value)
+      : name(name), label(label), value(value) {}
 
-    std::string GetName() const override
-    {
-        return name;
-    }
+  std::string GetName() const override { return name; }
 
-    std::string GetLabel() const override
-    {
-        return label;
-    }
+  std::string GetLabel() const override { return label; }
 
-    std::string GetStringValue() const override
-    {
-        std::ostringstream oss;
-        oss << *value;
-        return oss.str();
-    }
+  std::string GetStringValue() const override {
+    std::ostringstream oss;
+    oss << *value;
+    return oss.str();
+  }
 
 private:
-    std::string name;
-    std::string label;
-    T* value;
+  std::string name;
+  std::string label;
+  T *value;
 };
 
-class Reflectable
-{
+class Reflectable {
 public:
-    void AddProperty(Property* prop)
-    {
-        props[prop->GetName()] = prop;
-    }
+  void AddProperty(Property *prop) { props[prop->GetName()] = prop; }
 
-    std::map<std::string, Property*> GetProperties() const
-    {
-        return props;
-    }
+  std::map<std::string, Property *> GetProperties() const { return props; }
 
 private:
-    std::map<std::string, Property*> props;
+  std::map<std::string, Property *> props;
 };
 
-class Person : public Reflectable
-{
+class Person : public Reflectable {
 public:
-    Person(const std::string& name, int age) : name(name), age(age)
-    {
-        AddProperty(new PropertyImpl<std::string>("name", "Full Name", &this->name));
-        AddProperty(new PropertyImpl<int>("age", "Age", &this->age));
-    }
+  Person(const std::string &name, int age) : name(name), age(age) {
+    AddProperty(
+        new PropertyImpl<std::string>("name", "Full Name", &this->name));
+    AddProperty(new PropertyImpl<int>("age", "Age", &this->age));
+  }
 
 private:
-    std::string name;
-    int age;
+  std::string name;
+  int age;
 };
 
-int main(int argc, char* argv[])
-{
-    Person p("Dmitrii", 40);
+int main() {
+  Person p("Dmitrii", 40);
 
-    for (const auto& prop : p.GetProperties())
-    {
-        std::cout << prop.second->GetLabel() << ": " << prop.second->GetStringValue() << std::endl;
-    }
+  for (const auto &prop : p.GetProperties()) {
+    std::cout << prop.second->GetLabel() << ": "
+              << prop.second->GetStringValue() << std::endl;
+  }
 
-    return 0;
+  return 0;
 }
