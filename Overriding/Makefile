@@ -21,7 +21,7 @@ exec: $(BINARY)
 
 # Default target
 .PHONY: all
-all: exec
+all: clean $(BINARY)
 
 # Format source files
 .PHONY: fmt
@@ -45,4 +45,4 @@ $(BINARY): $(OBJECTS) | $(BIN_DIR)
 # Clean rule
 .PHONY: clean
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	@rm -rf $(OBJ_DIR) $(BIN_DIR)
