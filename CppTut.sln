@@ -61,7 +61,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VirtualFunctions", "Virtual
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Overriding", "Overriding\Overriding.vcxproj", "{573C050C-0C7E-4592-B047-41EC6F1AB5A2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultipleInheritance", "MultipleInheritance\MultipleInheritance.vcxproj", "{C30FA767-F183-4D8C-8607-081FFD1A7EEA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance_Multiple", "Inheritance_Multiple\Inheritance_Multiple.vcxproj", "{C30FA767-F183-4D8C-8607-081FFD1A7EEA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance_Vehicle", "Inheritance_Vehicle\Inheritance_Vehicle.vcxproj", "{B39F3619-FFBF-45BE-A31D-3637B07877AF}"
 EndProject

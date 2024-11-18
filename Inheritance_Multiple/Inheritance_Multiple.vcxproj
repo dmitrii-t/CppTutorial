@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{C30FA767-F183-4D8C-8607-081FFD1A7EEA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>MultipleInheritance</RootNamespace>
+    <RootNamespace>Inheritance_Multiple</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -200,7 +200,7 @@
       <ProgramDataBaseFileName>x64\Debug\vc143.pdb</ProgramDataBaseFileName>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>x64\Debug\MultipleInheritance.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>x64\Debug\Inheritance_Multiple.pch</PrecompiledHeaderOutputFile>
       <PreprocessToFile>false</PreprocessToFile>
       <PreprocessKeepComments>false</PreprocessKeepComments>
       <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
