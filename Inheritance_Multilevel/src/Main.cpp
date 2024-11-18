@@ -2,37 +2,34 @@
 #include <iostream>
 
 // TODO: Declare Vehicle as the base class
-class Vehicle
-{
+class Vehicle {
 public:
-    Vehicle(int s, int w, bool t) : seats(s), wheels(w), trunk(t){}
+  Vehicle(int s, int w, bool t) : seats(s), wheels(w), trunk(t) {}
 
-    int seats;
-    int wheels;
-    bool trunk;
+  int seats;
+  int wheels;
+  bool trunk;
 };
 
 // TODO: Derive Car from Vehicle
-class Car : public Vehicle
-{
+class Car : public Vehicle {
 public:
-    Car(int seats, int trunk) : Vehicle(seats, 4, trunk){}
+  Car(int seats, int trunk) : Vehicle(seats, 4, trunk) {}
 };
 
 // TODO: Derive Sedan from Car
-class Sedan : public Car
-{
+class Sedan : public Car {
 public:
-    Sedan() : Car(4, true){}
+  Sedan() : Car(4, true) {}
 };
 
 // TODO: Update main to pass the tests
 int main() {
-    Sedan sedan;
-    assert(sedan.trunk == true);
-    assert(sedan.seats == 4);
-    assert(sedan.wheels == 4);
+  Sedan sedan;
+  assert(sedan.trunk == true);
+  assert(sedan.seats == 4);
+  assert(sedan.wheels == 4);
 
-    std::cout << "All tests passed!" << std::endl;
-    return 0;
+  std::cout << "All tests passed!" << std::endl;
+  return 0;
 }
