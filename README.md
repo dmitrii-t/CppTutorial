@@ -1,5 +1,8 @@
 # CppTut
 
+## Exercises
+* [Generic Programming](GenericProgramming/README.md)
+
 ## References
 * [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
 * [C++/C Reference](https://en.cppreference.com/w/)
