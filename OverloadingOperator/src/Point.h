@@ -1,4 +1,6 @@
-﻿// Define Point class
+﻿#pragma once
+
+// Define Point class
 class Point {
 public:
   // Define + operator overload
@@ -13,3 +15,10 @@ public:
   const int x;
   const int y;
 };
+
+inline void TestPoint() {
+  Point p1(10, 5), p2(2, 4);
+  Point p3 = p1 + p2; // An example call to "operator +";
+  assert(p3.x == p1.x + p2.x);
+  assert(p3.y == p1.y + p2.y);
+}
