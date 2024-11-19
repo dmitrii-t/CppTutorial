@@ -1,4 +1,7 @@
-﻿#include <vector>
+﻿#pragma once
+
+#include <cassert>
+#include <vector>
 
 class Matrix {
 public:
@@ -37,3 +40,27 @@ private:
   // linear storage
   std::vector<int> values;
 };
+
+inline void TestMatrix() {
+  Matrix matrix{2, 2};
+  // !The example below returns a reference to an element within vector
+  // which we use to assign a value
+  matrix(0, 0) = 4;
+  assert(matrix(0, 0) == 4);
+
+  Matrix m1{2, 2};
+  m1(0, 0) = 1;
+  m1(0, 1) = 0;
+  m1(1, 0) = 0;
+  m1(1, 1) = 1;
+
+  Matrix m2{2, 2};
+  m2(0, 0) = 1;
+  m2(0, 1) = 0;
+  m2(1, 0) = 0;
+  m2(1, 1) = 1;
+
+  Matrix m3 = m1 + m2;
+  assert(m3(0, 0) == 2);
+  assert(m3(1, 1) == 2);
+}

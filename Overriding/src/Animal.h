@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include <cassert>
 #include <string>
 
 class Animal {
@@ -14,3 +15,8 @@ public:
 };
 
 std::string Dog::Talk() const { return "Woof"; }
+
+inline void TestAnimalTalks() {
+  Dog dog;
+  assert(dog.Talk() == "Woof");
+}

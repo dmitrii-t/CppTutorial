@@ -231,8 +231,8 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="src\Matrix.cpp" />
-    <ClCompile Include="src\Point.cpp" />
+    <ClCompile Include="src\Matrix.h" />
+    <ClCompile Include="src\Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

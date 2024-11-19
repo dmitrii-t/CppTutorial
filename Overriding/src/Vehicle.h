@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include <cassert>
 #include <cmath>
 
 // Define PI
@@ -47,3 +48,15 @@ public:
   double y{.0};
   double theta{.0};
 };
+
+inline void TestVehicleModelMoves() {
+  ParticleModel particle;
+  BicycleModel bicycle;
+
+  particle.Move(10, PI / 9);
+  bicycle.Move(10, PI / 9);
+
+  assert(particle.x != bicycle.x);
+  assert(particle.y != bicycle.y);
+  assert(particle.theta != bicycle.theta);
+}
