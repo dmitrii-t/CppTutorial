@@ -71,6 +71,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inheritance_Multilevel", "I
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Composition", "Composition\Composition.vcxproj", "{FA4F144A-2A7C-41A3-BE83-814F8E682459}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GenericProgramming", "GenericProgramming\GenericProgramming.vcxproj", "{5056100F-A4A6-4FA0-8981-B4201E0E0AED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -343,6 +345,14 @@ Global
 		{2E3579A7-D79A-44B0-A002-9C629048D1B8}.Release|Win32.Build.0 = Release|Win32
 		{2E3579A7-D79A-44B0-A002-9C629048D1B8}.Release|x64.ActiveCfg = Release|x64
 		{2E3579A7-D79A-44B0-A002-9C629048D1B8}.Release|x64.Build.0 = Release|x64
+		{5056100F-A4A6-4FA0-8981-B4201E0E0AED}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5056100F-A4A6-4FA0-8981-B4201E0E0AED}.Debug|Win32.Build.0 = Debug|Win32
+		{5056100F-A4A6-4FA0-8981-B4201E0E0AED}.Debug|x64.ActiveCfg = Debug|x64
+		{5056100F-A4A6-4FA0-8981-B4201E0E0AED}.Debug|x64.Build.0 = Debug|x64
+		{5056100F-A4A6-4FA0-8981-B4201E0E0AED}.Release|Win32.ActiveCfg = Release|Win32
+		{5056100F-A4A6-4FA0-8981-B4201E0E0AED}.Release|Win32.Build.0 = Release|Win32
+		{5056100F-A4A6-4FA0-8981-B4201E0E0AED}.Release|x64.ActiveCfg = Release|x64
+		{5056100F-A4A6-4FA0-8981-B4201E0E0AED}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
