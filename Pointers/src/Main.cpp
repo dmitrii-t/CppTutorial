@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 
+#pragma GCC diagnostic ignored "-Wreturn-local-addr"
+
 using namespace std;
 
 void Increment(int *i) {
@@ -60,9 +62,9 @@ int main() {
   cout << '\n';
 
   // there can be definitions of constant pointers to constant objects
-  const char *const pstr[] = {"Robert Redford", "Hopalong Cassidy",
-                              "Lassie",         "Slim Pickens",
-                              "Boris Karloff",  "Oliver Hardy"};
+  [[maybe_unused]] const char *const pstr[] = {
+      "Robert Redford", "Hopalong Cassidy", "Lassie",
+      "Slim Pickens",   "Boris Karloff",    "Oliver Hardy"};
 
   cout << "given array " << '\n';
   cout << "int data[3] = {1, 2, 3}" << '\n';
@@ -110,7 +112,7 @@ int main() {
   vector<int> *pv = &v;
 
   cout << "data=[ ";
-  for (long i = 0; i < pv->size(); i++) {
+  for (size_t i = 0; i < pv->size(); i++) {
     cout << pv->at(i) << ',';
   }
   cout << "]" << '\n';

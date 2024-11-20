@@ -16,7 +16,7 @@ int main() {
   // Element Access
   std::cout << "Vector allows constant time O(1) access to the elements; vec1: "
             << SPACE;
-  for (int i = 0; i < vec1.size(); i++) // NOLINT(modernize-loop-convert)
+  for (size_t i = 0; i < vec1.size(); i++) // NOLINT(modernize-loop-convert)
   {
     // Vectors allow constant time O(1) access
     std::cout << vec1[i] << SPACE;

@@ -9,24 +9,53 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 
+# ReSharper properties
+resharper_align_multiline_binary_expressions_chain = true
+resharper_align_multiline_expression_braces = true
+resharper_blank_lines_around_class_definition = 0
+resharper_blank_lines_around_function_definition = 0
+resharper_break_template_declaration = on_single_line
+resharper_continuous_line_indent = double
+resharper_cpp_empty_block_style = together
+resharper_cpp_int_align_comments = true
+resharper_cpp_invocable_declaration_braces = end_of_line
+resharper_cpp_max_line_length = 88
+resharper_cpp_new_line_before_catch = false
+resharper_cpp_new_line_before_else = false
+resharper_cpp_other_braces = end_of_line
+resharper_cpp_remove_blank_lines_near_braces_in_code = false
+resharper_cpp_type_declaration_braces = end_of_line
+resharper_function_declaration_return_type_style = on_single_line
+resharper_function_definition_return_type_style = on_single_line
+resharper_line_break_after_colon_in_member_initializer_lists = on_single_line
+resharper_simple_case_statement_style = line_break
+resharper_simple_embedded_statement_style = line_break
+resharper_space_after_ptr_in_data_member = false
+resharper_space_after_ptr_in_method = false
+resharper_space_after_ref_in_data_member = false
+resharper_space_after_ref_in_method = false
+resharper_space_before_ptr_in_abstract_decl = true
+resharper_space_before_ptr_in_data_member = true
+resharper_space_before_ptr_in_method = true
+resharper_space_before_ref_in_data_member = true
+resharper_space_before_ref_in_method = true
+resharper_toplevel_function_declaration_return_type_style = on_single_line
+resharper_use_continuous_line_indent_in_expression_braces = true
+resharper_use_continuous_line_indent_in_method_pars = true
+resharper_wrap_after_expression_lbrace = false
+resharper_wrap_before_expression_rbrace = false
+resharper_wrap_enumeration_style = chop_always
+
 # C++ source files
 [*.{cpp,h,hpp}]
-indent_style = space
-indent_size = 4
 
 # CMake files
 [CMakeLists.txt]
-indent_style = space
-indent_size = 2
 
 [*.cmake]
-indent_style = space
-indent_size = 2
 
 # Visual Studio project files
 [*.{vcxproj,vcxproj.filters,props,targets}]
-indent_style = space
-indent_size = 2
 
 # Makefiles
 [Makefile]
