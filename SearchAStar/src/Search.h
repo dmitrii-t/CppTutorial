@@ -64,8 +64,8 @@ bool Compare(Node v1, Node v2) { return v1.g + v1.h - v2.g - v2.h > 0; }
 void CellSort(vector<Node> *v) { sort(v->begin(), v->end(), Compare); }
 
 bool CheckValidCell(const Node node, const Board &grid) {
-  if (node.pos.x >= 0 && node.pos.x < grid.size() && node.pos.y >= 0 &&
-      node.pos.y < grid[0].size()) {
+  if (node.pos.x >= 0 && node.pos.x < static_cast<int>(grid.size()) &&
+      node.pos.y >= 0 && node.pos.y < static_cast<int>(grid[0].size())) {
     return grid[node.pos.x][node.pos.y] == State::kEmpty;
   }
 

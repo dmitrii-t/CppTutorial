@@ -28,8 +28,8 @@ int main() {
   //  Rvalue (right value) is a temporary value that does not persist beyond the
   //  expression that uses it. Rvalues are typically literals, temporary
   //  objects, or the results of expressions.
-  int y = 10;    // '10' is an rvalue
-  int z = x + y; // 'x + y' is an rvalue
+  int y = 10;                     // '10' is an rvalue
+  [[maybe_unused]] int z = x + y; // 'x + y' is an rvalue
   // int* q = &(x + y); // Error! 'x + y' is an rvalue and doesn't have a memory
   // address
 

@@ -10,14 +10,14 @@ class Sis {};
 class Bro {};
 
 // Write hello() function
-std::string hello(Dad d) { return "hello dad"; }
+std::string hello([[maybe_unused]] Dad d) { return "hello dad"; }
 
 // Overload hello() three times
-std::string hello(Mom m) { return "hello mom"; }
+std::string hello([[maybe_unused]] Mom m) { return "hello mom"; }
 
-std::string hello(Sis s) { return "hello sis"; }
+std::string hello([[maybe_unused]] Sis s) { return "hello sis"; }
 
-std::string hello(Bro b) { return "hello brother"; }
+std::string hello([[maybe_unused]] Bro b) { return "hello brother"; }
 
 // Call hello() from main()
 int main() {
