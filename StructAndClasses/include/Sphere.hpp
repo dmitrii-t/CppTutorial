@@ -10,36 +10,42 @@ using std::cout;
 
 class Sphere {
 public:
-  Sphere(double radius);
+    Sphere(double radius);
 
-  static double V(float radius) {
-    return (4.0 / 3.0) * PI * std::pow(radius, 3);
-  }
+    static double V(float radius) {
+        return (4.0 / 3.0) * PI * std::pow(radius, 3);
+    }
 
-  double Volume() const;
+    double Volume() const;
 
-  void Radius(double radius);
-  double Radius() { return radius; }
+    void   Radius(double radius);
+    double Radius() {
+        return radius;
+    }
 
 private:
-  double radius;
+    double radius;
 };
 
-Sphere::Sphere(double radius) { Radius(radius); }
-
-void Sphere::Radius(double r) {
-  if (r < 0) {
-    throw std::out_of_range("Radius");
-  }
-  radius = r;
+Sphere::Sphere(double radius) {
+    Radius(radius);
 }
 
-double Sphere::Volume() const { return (4.0 / 3.0) * PI * std::pow(radius, 3); }
+void Sphere::Radius(double r) {
+    if (r < 0) {
+        throw std::out_of_range("Radius");
+    }
+    radius = r;
+}
+
+double Sphere::Volume() const {
+    return (4.0 / 3.0) * PI * std::pow(radius, 3);
+}
 
 void TestSphere() {
-  Sphere sphere(5);
-  assert(sphere.Radius() == 5);
-  assert(abs(sphere.Volume() - 523.6) < 1);
+    Sphere sphere(5);
+    assert(sphere.Radius() == 5);
+    assert(abs(sphere.Volume() - 523.6) < 1);
 
-  cout << "All tests passed!" << '\n';
+    cout << "All tests passed!" << '\n';
 }
