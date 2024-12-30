@@ -14,14 +14,14 @@
 constexpr int CASE_DISTANCE = 32;
 
 int main() {
-  for (char i{65}, j{static_cast<char>(i + CASE_DISTANCE)}; i <= 90;
-       i++, j = i + CASE_DISTANCE) {
-    std::cout << i << " = char(" << static_cast<int>(i)
-              << ")" // printing out capital letter
-              << ", " << j << " = char(" << static_cast<int>(j)
-              << ")" // printing out lowercase letter
-              << std::endl;
-  }
+    for (char i{65}, j{static_cast<char>(i + CASE_DISTANCE)}; i <= 90;
+         i++, j = i + CASE_DISTANCE) {
+        std::cout << i << " = char(" << static_cast<int>(i)
+                  << ")"  // printing out capital letter
+                  << ", " << j << " = char(" << static_cast<int>(j)
+                  << ")"  // printing out lowercase letter
+                  << std::endl;
+    }
 
-  return 0;
+    return 0;
 }

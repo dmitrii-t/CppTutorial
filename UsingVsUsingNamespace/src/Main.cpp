@@ -10,13 +10,13 @@ using namespace std;
 using std::chrono::system_clock;
 
 int main() {
-  // uses namespace std
-  cout << "Example of brining ALL names with using namespace to output a text"
-       << endl;
+    // uses namespace std
+    cout << "Example of brining ALL names with using namespace to output a text"
+         << endl;
 
-  cout << "Example of brining a SPECIFIC system_clock name into the scope to "
-          "format time: "
-       << system_clock::to_time_t(system_clock::now()) << endl;
+    cout << "Example of brining a SPECIFIC system_clock name into the scope to "
+            "format time: "
+         << system_clock::to_time_t(system_clock::now()) << endl;
 
-  return 0;
+    return 0;
 }

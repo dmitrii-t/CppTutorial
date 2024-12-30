@@ -2,4 +2,6 @@
  * TODO Complete the example
  */
 
-int main() { return 0; }
+int main() {
+    return 0;
+}

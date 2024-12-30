@@ -23,45 +23,45 @@
 int count{10};
 
 void printStaticVar() {
-  // Persists variable in the Static storage
-  static int staticCount{0};
+    // Persists variable in the Static storage
+    static int staticCount{0};
 
-  // Print the current value of localVar
-  std::cout << "Static count equals: " << staticCount << std::endl;
+    // Print the current value of localVar
+    std::cout << "Static count equals: " << staticCount << std::endl;
 
-  // Increment localVar
-  staticCount++;
+    // Increment localVar
+    staticCount++;
 }
 
 int main() {
-  int count{20};
-  std::cout << "Inner count equals: " << count << std::endl;
-
-  {
-    // This hides the outer count variable. Valid code but BAD PRACTICE
-    std::cout << "Entering a new scope" << std::endl;
-
-    int count{30};
-
+    int count{20};
     std::cout << "Inner count equals: " << count << std::endl;
-    std::cout << "Global count equals: " << ::count << std::endl;
 
-    // Inner variable count gets destroyed when the block ends
-  }
+    {
+        // This hides the outer count variable. Valid code but BAD PRACTICE
+        std::cout << "Entering a new scope" << std::endl;
 
-  /*
-   * Prints out the following
-   * Static count equals: 0
-   * Static count equals: 1
-   */
-  printStaticVar();
-  printStaticVar();
+        int count{30};
 
-  /* Dynamic variable
-   */
-  int *dynamic_variable = new int{100};
-  std::cout << "Dynamic variable equals: " << *dynamic_variable << std::endl;
-  delete dynamic_variable;
+        std::cout << "Inner count equals: " << count << std::endl;
+        std::cout << "Global count equals: " << ::count << std::endl;
 
-  return 0;
+        // Inner variable count gets destroyed when the block ends
+    }
+
+    /*
+     * Prints out the following
+     * Static count equals: 0
+     * Static count equals: 1
+     */
+    printStaticVar();
+    printStaticVar();
+
+    /* Dynamic variable
+     */
+    int* dynamic_variable = new int{100};
+    std::cout << "Dynamic variable equals: " << *dynamic_variable << std::endl;
+    delete dynamic_variable;
+
+    return 0;
 }

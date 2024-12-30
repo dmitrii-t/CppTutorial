@@ -21,24 +21,24 @@ int uniformInitializer{30};
 
 class Person {
 public:
-  // Constructor with uniform initializer (or initializer list)
-  Person(std::string name, int age) : name{name}, age{age} {}
+    // Constructor with uniform initializer (or initializer list)
+    Person(std::string name, int age) : name{name}, age{age} {}
 
-  // Constructor with function initializer
-  Person(std::string name) : name(name), age(0) {}
+    // Constructor with function initializer
+    Person(std::string name) : name(name), age(0) {}
 
 private:
-  std::string name;
-  int age;
+    std::string name;
+    int         age;
 };
 
 // entry point
 int main() {
-  for (int i{0}; i < 5; ++i) {
-    // Using uniform initialization with rvalue
-    const int value{i * 2};
-    std::cout << "Iteration " << i << ": " << value << std::endl;
-  }
+    for (int i{0}; i < 5; ++i) {
+        // Using uniform initialization with rvalue
+        const int value{i * 2};
+        std::cout << "Iteration " << i << ": " << value << std::endl;
+    }
 
-  return 0;
+    return 0;
 }

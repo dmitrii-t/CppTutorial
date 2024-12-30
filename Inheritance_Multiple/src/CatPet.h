@@ -6,21 +6,21 @@
 
 class Animal {
 public:
-  double age;
+    double age;
 };
 
 class Pet {
 public:
-  std::string name;
+    std::string name;
 };
 
 // Dog derives from *both* Animal and Pet
 class Dog : public Animal, public Pet {
 public:
-  std::string breed;
+    std::string breed;
 };
 
 class Cat : public Animal, public Pet {
 public:
-  std::string color;
+    std::string color;
 };

@@ -5,10 +5,10 @@
 #include "../include/Student.hpp"
 
 int main() {
-  TestCar();
-  TestDate();
-  TestPyramid();
-  TestSphere();
-  TestStudent();
-  return 0;
+    TestCar();
+    TestDate();
+    TestPyramid();
+    TestSphere();
+    TestStudent();
+    return 0;
 }
