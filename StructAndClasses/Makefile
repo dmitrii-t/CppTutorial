@@ -3,14 +3,18 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++17 -O2
 
 SRC_DIR = src
+INC_DIR = include
 OBJ_DIR = obj
 BIN_DIR = bin
 
 # Source files
 SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 # Include header files for formatting
-HEADERS = $(wildcard $(SRC_DIR)/*.h $(SRC_DIR)/*.hpp)
+HEADERS = $(wildcard $(INC_DIR)/*.h $(INC_DIR)/*.hpp)
 OBJECTS = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SOURCES))
+
+# Include path for headers
+CXXFLAGS += -I$(INC_DIR)
 
 # Executable name
 BINARY = $(BIN_DIR)/a.exe
@@ -31,7 +35,7 @@ fmt:
 	@echo "Formatting complete."
 
 # Rule to create directories
-$(OBJ_DIR) $(BIN_DIR):
+$(OBJ_DIR) $(BIN_DIR) $(INC_DIR):
 	@mkdir -p $@
 
 # Rule to compile source files into object files

@@ -1,9 +1,11 @@
+#pragma once
+
 #include <cassert>
 #include <iostream>
 #include <stdexcept>
 #include <string>
 
-using namespace std;
+using std::cout;
 
 class Student {
 public:
@@ -53,7 +55,7 @@ void Student::Gpa(float gpa) {
 
 void Student::Name(string name) { this->name = name; }
 
-int main() {
+void TestStudent() {
   // Test valid constructor and accessors
   Student bob{"Bob", 4, 1.0};
   assert(bob.Name() == "Bob");
@@ -133,6 +135,5 @@ int main() {
   assert(bobby.Grade() == 5);
   assert(bobby.Gpa() == 3.5);
 
-  std::cout << "All tests passed!" << std::endl;
-  return 0;
+  cout << "All tests passed!" << '\n';
 }

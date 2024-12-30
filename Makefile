@@ -43,7 +43,7 @@ build:
 				exit 1; \
 			fi \
 		) || EXIT_CODE=$$?; \
-	done < <(find . -name Makefile -exec dirname {} \;); \
+	done < <(find . -mindepth 2 -name Makefile -exec dirname {} \;); \
 	exit $$EXIT_CODE
 
 check-readme:

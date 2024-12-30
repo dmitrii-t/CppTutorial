@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 
@@ -36,5 +38,3 @@ void TestCar() {
   car.SetBrand("Peugeot");
   std::cout << car.GetBrand() << "\n";
 }
-
-int main() { TestCar(); }
