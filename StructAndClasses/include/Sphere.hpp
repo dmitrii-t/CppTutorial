@@ -1,6 +1,10 @@
+#pragma once
+
 #include <cassert>
 #include <cmath>
 #include <iostream>
+
+using std::cout;
 
 #define PI 3.1415927
 
@@ -32,11 +36,10 @@ void Sphere::Radius(double r) {
 
 double Sphere::Volume() const { return (4.0 / 3.0) * PI * std::pow(radius, 3); }
 
-int main() {
+void TestSphere() {
   Sphere sphere(5);
   assert(sphere.Radius() == 5);
   assert(abs(sphere.Volume() - 523.6) < 1);
 
-  std::cout << "All tests passed!" << std::endl;
-  return 0;
+  cout << "All tests passed!" << '\n';
 }

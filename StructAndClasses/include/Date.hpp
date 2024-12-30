@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cassert>
 #include <climits>
 #include <iostream>
@@ -93,7 +95,7 @@ std::string Date::String() const {
   return oss.str();
 }
 
-int main() {
+void TestDate() {
   Date date{29, 8, 1981};
   assert(date.Day() == 29);
   assert(date.Month() == 8);
@@ -165,5 +167,4 @@ int main() {
   assert(dateToString.String() == "August 29, 1981");
 
   std::cout << "All tests passed!" << std::endl;
-  return 0;
 }

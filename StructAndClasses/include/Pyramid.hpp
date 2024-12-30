@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cassert>
 #include <iostream>
 #include <stdexcept>
@@ -57,7 +59,7 @@ void Pyramid::Height(int h) {
 }
 
 // Test
-int main() {
+int TestPyramid() {
   Pyramid pyramid(4, 5, 6);
   assert(pyramid.Length() == 4);
   assert(pyramid.Width() == 5);
