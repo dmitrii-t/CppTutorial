@@ -1,6 +1,6 @@
 ﻿# Compiler settings
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++17 -O2
+CXXFLAGS = -Wall -Wextra -std=c++17
 
 SRC_DIR = src
 OBJ_DIR = obj

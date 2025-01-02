@@ -1,10 +1,14 @@
-// Referencies.cpp
+// References.cpp
 #include <iostream>
 
 using namespace std;
 
-void DoubleString(string& value) {
-    // Concatenates the string with a space and itself.
+void PassByValue(string value) {
+    value = value + " " + value;
+}
+
+void UpdateByReference(string& value) {
+    // Concatenates the string with a space and the string itself.
     // When the value is passed by reference this will update the value outside
     // off this function as well. Stack:
     // +--------------------------+
@@ -20,8 +24,11 @@ void DoubleString(string& value) {
 
 int main() {
     string s = "Hello";
-    cout << "The string s is: " << s << "\n";
+    cout << "1: s=" << s << "\n";
 
-    DoubleString(s);
-    cout << "The string s is now: " << s << "\n";
+    PassByValue(s);
+    cout << "2: passing by value s=" << s << "\n";
+
+    UpdateByReference(s);
+    cout << "3: passing by ref s=" << s << "\n";
 }

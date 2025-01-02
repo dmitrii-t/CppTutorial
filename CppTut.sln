@@ -19,7 +19,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointers", "Pointers\Pointe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicMemory", "DynamicMemory\DynamicMemory.vcxproj", "{0EF91D4A-ADAA-4C5B-96F7-E37F754AA240}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Referencies", "Referencies\Referencies.vcxproj", "{8D43BD7B-B89B-40F9-A271-B6CC7A4DB1AA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "References", "References\References.vcxproj", "{8D43BD7B-B89B-40F9-A271-B6CC7A4DB1AA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MoveSemantics", "MoveSemantics\MoveSemantics.vcxproj", "{D011EE3F-FB1B-498B-A792-C9CC4E358DF1}"
 EndProject

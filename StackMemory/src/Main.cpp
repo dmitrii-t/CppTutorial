@@ -1,8 +1,10 @@
 #include <cstdio>
+#include <thread>
 
-void StackExpand(int a, int b) {
+int* StackExpand(int a, int b) {
     int k = a + b;
-    printf("3: %p | +60bytes without -O optimizations\n", &k);
+    printf("3: %p | +60B without -O optimizations\n", &k);
+    return &k;  // returns a pointer to non-existing var
 }
 
 void StackOverflow(int* startp) {
@@ -20,12 +22,22 @@ int main() {
     printf("1: %p | start\n", &i);
 
     int j = 2;
-    printf("2: %p | +4bytes on int j declaration\n", &j);
+    printf("2: %p | +4B on int j declaration\n", &j);
 
-    StackExpand(i, j);
+    printf("4: %p | dangling pointer on function return as the stack contracts\n",
+           StackExpand(i, j));
 
-    int l = 4;
-    printf("4: %p | -56bytes (-60 on exit Func and +4 on declaring int l)\n", &l);
+    int l = 5;
+    printf("5: %p | -56B (-60 on exit Func and +4 on declaring int l)\n", &l);
 
+    std::thread th([]() {
+        int l = 6;
+        printf(
+            "6: %p | +255KB as the new thread gets own fixed stack from the "
+            "process virtual memory space\n",
+            &l);
+    });
+
+    th.join();
     return 0;
 }
