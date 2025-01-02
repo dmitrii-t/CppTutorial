@@ -13,10 +13,10 @@ void Increment(int* i) {
     (*i)++;
 }
 
-int* OutOfScopePointer() {
+int* DanglingPointer() {
     int  i  = 100;
     int* pi = &i;
-    cout << "OutOfScopePointer: &i=" << pi << '\n';
+    cout << "DanglingPointer within the func &i=" << pi << '\n';
     return pi;
 }
 
@@ -123,9 +123,9 @@ int main() {
     cout << "i=" << i << '\n';
     cout << '\n';
 
-    int* j = OutOfScopePointer();
-    cout << "int* j = OutOfScopePointer(); j=" << j
-         << " // *OutOfScopePointer() fails as pointer is out of scope" << '\n';
+    int* j = DanglingPointer();
+    cout << "int* j = DanglingPointer(); j=" << j
+         << " // *DanglingPointer() fails as pointer is out of scope" << '\n';
     cout << '\n';
 
     return 0;
