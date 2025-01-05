@@ -1,5 +1,5 @@
 /*
- * LvaluesRvalues.cpp
+ * LvaluesRvalues example
  */
 
 #include <iostream>
@@ -11,18 +11,18 @@ void func(int&& rvalue) {
     std::cout << "rvalue=" << rvalue << '\n';
 }
 
-class MyClass {
+class A {
 public:
-    MyClass() {
+    A() {
         std::cout << "Constructor" << '\n';
     }
-    ~MyClass() {
+    ~A() {
         std::cout << "Destructor" << '\n';
     }
-    MyClass(const MyClass&) {
+    A(const A&) {
         std::cout << "Copy Constructor" << '\n';
     }
-    MyClass(MyClass&&) noexcept {
+    A(A&&) noexcept {
         std::cout << "Move Constructor" << '\n';
     }
 };
@@ -53,8 +53,8 @@ int main() {
     func(5);  // Calls rvalue reference version
 
     // 2. Move semantics
-    MyClass obj1;
-    MyClass obj2 = std::move(obj1);  // Calls move constructor
+    A obj1;
+    A obj2 = std::move(obj1);  // Calls move constructor
 
     return 0;
 }
