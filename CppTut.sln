@@ -77,6 +77,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ResourceCopyingError", "Res
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ResourceCopyingPolicies", "ResourceCopyingPolicies\ResourceCopyingPolicies.vcxproj", "{A3B77C93-BB46-4B43-BCDF-6D6BFAAD5BE4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RAII", "RAII\RAII.vcxproj", "{697D2432-7717-479B-AC90-59283EEED729}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -373,6 +375,14 @@ Global
 		{A3B77C93-BB46-4B43-BCDF-6D6BFAAD5BE4}.Release|Win32.Build.0 = Release|Win32
 		{A3B77C93-BB46-4B43-BCDF-6D6BFAAD5BE4}.Release|x64.ActiveCfg = Release|x64
 		{A3B77C93-BB46-4B43-BCDF-6D6BFAAD5BE4}.Release|x64.Build.0 = Release|x64
+		{697D2432-7717-479B-AC90-59283EEED729}.Debug|Win32.ActiveCfg = Debug|Win32
+		{697D2432-7717-479B-AC90-59283EEED729}.Debug|Win32.Build.0 = Debug|Win32
+		{697D2432-7717-479B-AC90-59283EEED729}.Debug|x64.ActiveCfg = Debug|x64
+		{697D2432-7717-479B-AC90-59283EEED729}.Debug|x64.Build.0 = Debug|x64
+		{697D2432-7717-479B-AC90-59283EEED729}.Release|Win32.ActiveCfg = Release|Win32
+		{697D2432-7717-479B-AC90-59283EEED729}.Release|Win32.Build.0 = Release|Win32
+		{697D2432-7717-479B-AC90-59283EEED729}.Release|x64.ActiveCfg = Release|x64
+		{697D2432-7717-479B-AC90-59283EEED729}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
