@@ -13,21 +13,7 @@ fmt:
 	@echo "Formatting all source files..."
 	@find . -type f \( -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \) -exec $(CLANG_FORMAT) -style=file -i {} \;
 
-check-fmt:
-	@echo "Running format check..."
-	@FORMATTING_ISSUES=0; \
-	while IFS= read -r file; do \
-		if ! $(CLANG_FORMAT) -style=file --dry-run --Werror "$$file"; then \
-			FORMATTING_ISSUES=1; \
-			$(CLANG_FORMAT) -style=file --dry-run "$$file"; \
-		fi \
-	done < <(find . -type f \( -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \)); \
-	if [ $$FORMATTING_ISSUES -eq 1 ]; then \
-		echo "Formatting issues found. Please run 'make fmt' locally."; \
-		exit 1; \
-	fi
-
-build:
+all:
 	@echo "Building all projects..."
 	@EXIT_CODE=0; \
 	while IFS= read -r project_dir; do \
@@ -45,6 +31,20 @@ build:
 		) || EXIT_CODE=$$?; \
 	done < <(find . -mindepth 2 -name Makefile -exec dirname {} \;); \
 	exit $$EXIT_CODE
+
+check-fmt:
+	@echo "Running format check..."
+	@FORMATTING_ISSUES=0; \
+	while IFS= read -r file; do \
+		if ! $(CLANG_FORMAT) -style=file --dry-run --Werror "$$file"; then \
+			FORMATTING_ISSUES=1; \
+			$(CLANG_FORMAT) -style=file --dry-run "$$file"; \
+		fi \
+	done < <(find . -type f \( -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \)); \
+	if [ $$FORMATTING_ISSUES -eq 1 ]; then \
+		echo "Formatting issues found. Please run 'make fmt' locally."; \
+		exit 1; \
+	fi
 
 check-readme:
 	@echo "Checking for README.md in each project..."
