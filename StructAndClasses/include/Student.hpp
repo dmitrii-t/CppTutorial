@@ -112,7 +112,7 @@ void TestStudent() {
     // Test invalid GPA (too high)
     caught = false;
     try {
-        Student invalid{"bob", 5, 4.1};
+        Student invalid{"bob", 5, 4.1f};
     } catch (const out_of_range& e) {
         caught = true;
         assert(string(e.what()) == "Gpa");

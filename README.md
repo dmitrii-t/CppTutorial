@@ -3,6 +3,10 @@
 ## Exercises
 * [Generic Programming](GenericProgramming/README.md)
 
+## Build
+* On unix-like systems run `build.sh`.
+* On windows run `build.ps1` script.
+
 ## References
 * [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
 * [C++/C Reference](https://en.cppreference.com/w/)
