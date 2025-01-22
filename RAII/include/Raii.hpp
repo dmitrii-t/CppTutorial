@@ -66,7 +66,7 @@ void ExRaii() {
     double den[] = {1.0, 2.0, 3.0, 4.0, 5.0};
     for (size_t i = 0; i < std::size(den); ++i) {
         // allocate the resource on the stack
-        I en(i);
+        I en(static_cast<size_t>(i));
 
         // use the resource
         cout << *en << "/" << den[i] << " = " << *en / den[i] << '\n';

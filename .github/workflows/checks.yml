@@ -1,4 +1,4 @@
-﻿name: C++ CI
+﻿name: Build Check
 
 on:
   push:
@@ -13,19 +13,49 @@ jobs:
     container:
       image: silkeh/clang:18
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check code formatting
+        run: |
+              find . -name '*.cpp' -o -name '*.hpp' -o -name '*.c' -o -name '*.h' | xargs clang-format -n -Werror
 
-      - name: Check Formatting of the each project
-        run: make check-fmt
+  windows-build:
+    name: Build with MSVC
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        build_type: [ Debug, Release ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  build:
-    name: Build Projects
+      - name: Setup Visual Studio Developer Command Prompt
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Build
+        shell: pwsh
+        run: ./build.ps1 -BuildType ${{matrix.build_type}}
+
+  gcc-build:
+    name: Build with GCC14
     needs: check-format
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        build_type: [ Debug, Release ]
     container:
       image: gcc:14
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Build projects
-        run: make build
+      - name: Install CMake
+        run: |
+          apt-get update
+          apt-get install -y cmake
+
+      - name: Make build script executable
+        run: chmod +x build.sh
+      
+      - name: Build
+        run: ./build.sh --build-type ${{matrix.build_type}}

@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include "Animal.h"
-#include "Vehicle.h"
+#include "../include/Animal.h"
+#include "../include/Vehicle.h"
 
 int main() {
     TestAnimalTalks();
     TestVehicleModelMoves();
-    std::cout << "All tests passed!" << std::endl;
+    std::cout << "All tests passed!" << '\n';
     return 0;
 }
