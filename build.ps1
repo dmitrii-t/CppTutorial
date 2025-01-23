@@ -1,7 +1,19 @@
 param(
     [ValidateSet("Debug", "Release")]
-    [string]$BuildType = "Debug"
+    [string]$BuildType = "Debug",
+
+    [Parameter()]
+    [switch]$Clean
 )
+
+# Clean build directories if --clean is specified
+if ($Clean) {
+    $buildDirs = Get-ChildItem -Path $PSScriptRoot -Filter "build" -Directory -Recurse
+    foreach ($dir in $buildDirs) {
+        Write-Host "Removing build directory: $($dir.FullName)"
+        Remove-Item -Path $dir.FullName -Recurse -Force
+    }
+}
 
 $cmakeFiles = Get-ChildItem -Path $PSScriptRoot -Filter "CMakeLists.txt" -Recurse
 foreach ($cmakeFile in $cmakeFiles) {
