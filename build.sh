@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BUILD_TYPE="Debug"
+CLEAN=false
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -13,12 +14,20 @@ while [[ $# -gt 0 ]]; do
             fi
             shift 2
             ;;
+        --clean)
+            CLEAN=true
+            shift
+            ;;
         *)
-            echo "Usage: $0 [--build-type Debug|Release]"
+            echo "Usage: $0 [--build-type Debug|Release] [--clean]"
             exit 1
             ;;
     esac
 done
+
+if [ "$CLEAN" = true ]; then
+    find "$(dirname "$0")" -type d -name "build" -exec rm -rf {} +
+fi
 
 find "$(dirname "$0")" -name "CMakeLists.txt" | while read -r cmake_file; do
     project_dir=$(dirname "$cmake_file")
