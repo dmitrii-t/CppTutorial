@@ -1,0 +1,2 @@
+﻿// Locks.hpp
+void ShowcaseLockGuards();
